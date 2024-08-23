@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_api_headers/google_api_headers.dart';
@@ -338,7 +339,14 @@ class _PlacePickerState extends State<PlacePicker> {
                   padding: const EdgeInsets.only(top: 16,left: 16,right: 16),
                   child: Text('Error: ${snapshot.error}'),
                 ),
-                 Spacer(),
+                SizedBox(height: 16),
+                ElevatedButton(onPressed: (){
+                  AppSettings.openAppSettings(type: AppSettingsType.location).then((e){
+                    Navigator.pop(context);
+                  });
+                }, child: Text('Open Location Settings') 
+                ),
+                Spacer(),
               ]);
             } else {
               children.add(CircularProgressIndicator());

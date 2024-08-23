@@ -81,6 +81,7 @@ class PlaceProvider extends ChangeNotifier {
         // Or you can swallow the issue and respect the user's privacy
         return;
       }
+     
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }

@@ -341,7 +341,7 @@ class _PlacePickerState extends State<PlacePicker> {
                 ),
                 SizedBox(height: 16),
                 ElevatedButton(onPressed: (){
-                  AppSettings.openAppSettings(type: AppSettingsType.location).then((e)async {
+                  AppSettings.openAppSettings().then((e)async {
                     await Geolocator.isLocationServiceEnabled().then((val) async {
                        if (val == true) {
                         await provider!.updateCurrentLocation(

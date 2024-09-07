@@ -279,7 +279,7 @@ class _PlacePickerState extends State<PlacePicker> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-        canPop: false,
+        canPop: true,
         onPopInvoked: (didPop) {
           if(didPop){
             return;

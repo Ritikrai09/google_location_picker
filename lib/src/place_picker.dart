@@ -38,6 +38,7 @@ class PlacePicker extends StatefulWidget {
     this.hintText,
     this.searchingText,
     this.selectText,
+    this.iconWidget,
     this.outsideOfPickAreaText,
     this.onAutoCompleteFailed,
     this.onGeocodingSearchFailed,
@@ -84,6 +85,7 @@ class PlacePicker extends StatefulWidget {
 
   final LatLng initialPosition;
   final bool? useCurrentLocation;
+  final Widget? iconWidget;
   final LocationAccuracy desiredLocationAccuracy;
 
   final String? hintText;
@@ -501,6 +503,7 @@ class _PlacePickerState extends State<PlacePicker> {
       debounceMilliseconds: widget.cameraMoveDebounceInMilliseconds,
       enableMapTypeButton: widget.enableMapTypeButton,
       enableMyLocationButton: widget.enableMyLocationButton,
+      iconWidget:widget.iconWidget,
       usePinPointingSearch: widget.usePinPointingSearch,
       usePlaceDetailSearch: widget.usePlaceDetailSearch,
       onMapCreated: widget.onMapCreated,

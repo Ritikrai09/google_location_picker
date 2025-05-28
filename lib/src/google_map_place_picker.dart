@@ -297,7 +297,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
   }
 
   Widget _defaultPinBuilder(BuildContext context, PinState state) {
-    var locationIcon = widget.iconWidget ?? Icon(Icons.place,size: 36, color:Colors.red);
+    var locationIcon = iconWidget ?? Icon(Icons.place,size: 36, color:Colors.red);
     if (state == PinState.Preparing) {
       return Container();
     } else if (state == PinState.Idle) {

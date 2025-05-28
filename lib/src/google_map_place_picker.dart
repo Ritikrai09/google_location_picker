@@ -312,6 +312,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
               ],
             ),
           ),
+          if(iconWidget == null)
           Center(
             child: Container(
               width: 5,
@@ -337,6 +338,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
               ],
             ),
           ),
+          if(iconWidget == null)
           Center(
             child: Container(
               width: 5,

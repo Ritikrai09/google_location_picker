@@ -46,6 +46,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
     this.usePinPointingSearch,
     this.usePlaceDetailSearch,
     this.selectInitialPosition,
+    this.iconWidget,
     this.language,
     this.pickArea,
     this.forceSearchOnZoomChanged,
@@ -62,7 +63,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
 
   final LatLng initialTarget;
   final GlobalKey appBarKey;
-
+  final Widget? iconWidget;
   final SelectedPlaceWidgetBuilder? selectedPlaceWidgetBuilder;
   final PinBuilder? pinBuilder;
 
@@ -296,6 +297,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
   }
 
   Widget _defaultPinBuilder(BuildContext context, PinState state) {
+    var locationIcon = widget.iconWidget ?? Icon(Icons.place,size: 36, color:Colors.red);
     if (state == PinState.Preparing) {
       return Container();
     } else if (state == PinState.Idle) {
@@ -305,7 +307,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(Icons.place, size: 36, color: Colors.red),
+                locationIcon,
                 SizedBox(height: 42),
               ],
             ),
@@ -330,7 +332,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 AnimatedPin(
-                    child: Icon(Icons.place, size: 36, color: Colors.red)),
+                    child:locationIcon),
                 SizedBox(height: 42),
               ],
             ),
